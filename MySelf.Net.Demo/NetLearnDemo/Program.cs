@@ -1,0 +1,92 @@
+
+#region 创建webapplicationBuilder
+
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using MySelf.Net.Demo.MyInterface;
+using MySelf.Net.Demo.MyService;
+
+var builder = WebApplication.CreateBuilder(args);
+
+#endregion
+
+#region  配置builder 
+#region configuaration
+builder.Configuration.AddJsonFile("customsettings.json", true, true);
+builder.Configuration.AddXmlFile("appsettings.xml", true, true);
+#endregion
+#region 日志组件
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole().AddDebug();
+builder.Logging.AddLog4Net();//Microsoft.Extensions.Logging.Log4Net.AspNetCore
+builder.Logging.AddFilter("System", LogLevel.Warning);
+builder.Logging.AddFilter("Microsoft", LogLevel.Warning);
+#endregion
+
+#region IOC容器替换---
+//builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory);
+#endregion
+#region Host--Kestrel
+builder.WebHost.ConfigureKestrel(options => {
+    options.Limits.MaxConcurrentConnections = 100;
+    options.Limits.MaxConcurrentUpgradedConnections = 100;
+    options.Limits.MaxRequestBodySize = 1024 * 1024;//byte--有IIS代理后就失效了
+    options.Limits.MinRequestBodyDataRate = new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+    options.Limits.MinResponseDataRate = new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+    //options.Listen(IPAddress.Loopback, 8000);
+    //options.Listen(IPAddress.Loopback, 9000);
+
+    //options.Listen(IPAddress.Loopback, 9099, o => o.Protocols =
+    //     HttpProtocols.Http2);//命令行参数的端口就失效了
+    //options.Listen(IPAddress.Loopback, 5001, listenOptions =>
+    // {
+    //     listenOptions.UseHttps("testCert.pfx", "testPassword");
+    // });//没有本地证书
+    options.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(2);
+    options.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(1);
+});
+
+#endregion
+
+#region IOC注册
+#region 开发者注册
+builder.Services.AddTransient<ITestServiceA, TestServiceA>();
+builder.Services.AddTransient<ITestServiceA, TestServiceAV2>();//瞬时--注册的刷新，2个都在
+builder.Services.AddSingleton<ITestServiceB, TestServiceB>();   //单例
+builder.Services.AddScoped<ITestServiceC, TestServiceC>();//作用域单例--一次请求一个实例,
+builder.Services.AddTransient<ITestServiceD, TestServiceD>();
+
+builder.Services.AddTransient<ITestServiceE, TestServiceE>();
+builder.Services.Replace(ServiceDescriptor.Transient<ITestServiceE, TestServiceEV2>());
+#endregion
+
+#endregion
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+#endregion
+
+
+#region Build
+var app = builder.Build();
+#endregion
+#region Use中间件
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+}
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+#endregion
+#region Run
+app.Run();
+#endregion

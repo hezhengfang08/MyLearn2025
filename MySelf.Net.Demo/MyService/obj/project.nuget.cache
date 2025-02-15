@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZHxeb4V8Ds4=",
+  "success": true,
+  "projectFilePath": "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MyService\\MySelf.Net.Demo.MyService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hzf\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.2\\microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

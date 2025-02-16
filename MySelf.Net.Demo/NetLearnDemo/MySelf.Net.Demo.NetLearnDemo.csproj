@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyInterface\MySelf.Net.Demo.MyInterface.csproj" />
+    <ProjectReference Include="..\MySelf.AgileFramework.WebCore\MySelf.AgileFramework.WebCore.csproj" />
     <ProjectReference Include="..\MyService\MySelf.Net.Demo.MyService.csproj" />
   </ItemGroup>
 

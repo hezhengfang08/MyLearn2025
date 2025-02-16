@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rMYceBDyP4M=",
+  "success": true,
+  "projectFilePath": "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MySelf.AgileFramework.WebCore\\MySelf.AgileFramework.WebCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hzf\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\hzf\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hzf\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

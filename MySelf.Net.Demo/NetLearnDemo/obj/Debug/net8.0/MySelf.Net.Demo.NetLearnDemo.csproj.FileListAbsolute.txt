@@ -48,4 +48,7 @@ E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\MySe
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\MySelf.Net.Demo.NetLearnDemo.csproj.AssemblyReference.cache
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\MySelf.N.D51876A9.Up2Date
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\log4net.config
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\MySelf.Net.Demo.NetLearnDemo.sourcelink.json
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.pdb
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

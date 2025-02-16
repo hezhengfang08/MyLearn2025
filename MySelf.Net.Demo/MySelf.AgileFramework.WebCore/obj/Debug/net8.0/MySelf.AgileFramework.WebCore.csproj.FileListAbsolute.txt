@@ -1,0 +1,13 @@
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.deps.json
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.pdb
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.csproj.AssemblyReference.cache
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.GeneratedMSBuildEditorConfig.editorconfig
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.AssemblyInfoInputs.cache
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.AssemblyInfo.cs
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.csproj.CoreCompileInputs.cache
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.sourcelink.json
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\refint\MySelf.AgileFramework.WebCore.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\MySelf.AgileFramework.WebCore.pdb
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MySelf.AgileFramework.WebCore\obj\Debug\net8.0\ref\MySelf.AgileFramework.WebCore.dll

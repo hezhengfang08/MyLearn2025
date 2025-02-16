@@ -352,6 +352,20 @@
           }
         }
       },
+      "MySelf.AgileFramework.WebCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MySelf.AgileFramework.WebCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySelf.AgileFramework.WebCore.dll": {}
+        }
+      },
       "MySelf.Net.Demo.MyInterface/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1029,6 +1043,11 @@
         "version.txt"
       ]
     },
+    "MySelf.AgileFramework.WebCore/1.0.0": {
+      "type": "project",
+      "path": "../MySelf.AgileFramework.WebCore/MySelf.AgileFramework.WebCore.csproj",
+      "msbuildProject": "../MySelf.AgileFramework.WebCore/MySelf.AgileFramework.WebCore.csproj"
+    },
     "MySelf.Net.Demo.MyInterface/1.0.0": {
       "type": "project",
       "path": "../MyInterface/MySelf.Net.Demo.MyInterface.csproj",
@@ -1044,6 +1063,7 @@
     "net8.0": [
       "Autofac.Extensions.DependencyInjection >= 10.0.0",
       "Microsoft.Extensions.Logging.Log4Net.AspNetCore >= 8.0.0",
+      "MySelf.AgileFramework.WebCore >= 1.0.0",
       "MySelf.Net.Demo.MyInterface >= 1.0.0",
       "MySelf.Net.Demo.MyService >= 1.0.0"
     ]
@@ -1082,6 +1102,9 @@
           "projectReferences": {
             "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MyInterface\\MySelf.Net.Demo.MyInterface.csproj": {
               "projectPath": "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MyInterface\\MySelf.Net.Demo.MyInterface.csproj"
+            },
+            "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MySelf.AgileFramework.WebCore\\MySelf.AgileFramework.WebCore.csproj": {
+              "projectPath": "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MySelf.AgileFramework.WebCore\\MySelf.AgileFramework.WebCore.csproj"
             },
             "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MyService\\MySelf.Net.Demo.MyService.csproj": {
               "projectPath": "E:\\Works\\learning\\MyLearn2025\\MySelf.Net.Demo\\MyService\\MySelf.Net.Demo.MyService.csproj"

@@ -10,6 +10,7 @@
         "dependencies": {
           "Autofac.Extensions.DependencyInjection": "10.0.0",
           "Microsoft.Extensions.Logging.Log4Net.AspNetCore": "8.0.0",
+          "MySelf.AgileFramework.WebCore": "1.0.0",
           "MySelf.Net.Demo.MyInterface": "1.0.0",
           "MySelf.Net.Demo.MyService": "1.0.0"
         },
@@ -164,6 +165,18 @@
       "System.Security.Principal.Windows/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
+      "MySelf.AgileFramework.WebCore/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "MySelf.AgileFramework.WebCore.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "MySelf.Net.Demo.MyInterface/1.0.0": {
@@ -333,6 +346,11 @@
       "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
       "path": "system.security.principal.windows/4.5.0",
       "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    },
+    "MySelf.AgileFramework.WebCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MySelf.Net.Demo.MyInterface/1.0.0": {
       "type": "project",

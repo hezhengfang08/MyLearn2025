@@ -13,3 +13,4 @@ E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MyService\obj\Debug\net8.0\MySelf.
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MyService\obj\Debug\net8.0\refint\MySelf.Net.Demo.MyService.dll
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MyService\obj\Debug\net8.0\MySelf.Net.Demo.MyService.pdb
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MyService\obj\Debug\net8.0\ref\MySelf.Net.Demo.MyService.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\MyService\obj\Debug\net8.0\MySelf.Net.Demo.MyService.sourcelink.json

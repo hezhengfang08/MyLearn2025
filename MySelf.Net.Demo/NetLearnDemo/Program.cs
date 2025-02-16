@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using MySelf.Net.Demo.MyInterface;
 using MySelf.Net.Demo.MyService;
+using MySelf.Net.Demo.NetLearnDemo.Utility;
+using MySelf.AgileFramework.WebCore.ConfigurationExtend;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,31 @@ var builder = WebApplication.CreateBuilder(args);
 #region configuaration
 builder.Configuration.AddJsonFile("customsettings.json", true, true);
 builder.Configuration.AddXmlFile("appsettings.xml", true, true);
+#region 内存Provider
+var memoryConfig = new Dictionary<string, string>
+                {
+                   {"TodayMemory", "0114-Memory"},
+                   {"RabbitMQOptions:HostName", "192.168.3.254-Memory"},
+                    {"RabbitMQOptions:UserName", "guest-Memory"},
+                     {"RabbitMQOptions:Password", "guest-Memory"}
+                };
+builder.Configuration.AddInMemoryCollection(memoryConfig);
+#endregion
+#endregion
+#region 自定义模式
+
+//((IConfigurationBuilder)builder.Configuration).Add(new CustomConfigurationSource());
+
+//builder.Configuration.Add(new CustomConfigurationSource());
+//A类 实现了B接口，B接口是有Add方法   
+//但是用A类实例直接去调用Add方法报错
+//但如果把A强制转换成B接口类型，就不报错了
+//因为接口的Add方法是显式实现，那么调用时就必须转换成B接口类型---IConfigurationBuilder.Add
+
+builder.Configuration.AddCustomConfiguration();
+#endregion
+#region ChangeToken
+ChangeTokenTest.Show();
 #endregion
 #region 日志组件
 builder.Logging.ClearProviders();
@@ -28,7 +55,8 @@ builder.Logging.AddFilter("Microsoft", LogLevel.Warning);
 //builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory);
 #endregion
 #region Host--Kestrel
-builder.WebHost.ConfigureKestrel(options => {
+builder.WebHost.ConfigureKestrel(options =>
+{
     options.Limits.MaxConcurrentConnections = 100;
     options.Limits.MaxConcurrentUpgradedConnections = 100;
     options.Limits.MaxRequestBodySize = 1024 * 1024;//byte--有IIS代理后就失效了

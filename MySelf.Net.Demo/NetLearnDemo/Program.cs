@@ -8,6 +8,7 @@ using MySelf.Net.Demo.MyInterface;
 using MySelf.Net.Demo.MyService;
 using MySelf.Net.Demo.NetLearnDemo.Utility;
 using MySelf.AgileFramework.WebCore.ConfigurationExtend;
+using MySelf.AgileFramework.WebCore.StartupExtend;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,7 +95,9 @@ builder.Services.Replace(ServiceDescriptor.Transient<ITestServiceE, TestServiceE
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 #endregion
-
+#region IStartupFilterÍØÕ¹
+//builder.Services.AddTransient<IStartupFilter, CustomStartupFilter>();//
+#endregion
 
 #region Build
 var app = builder.Build();

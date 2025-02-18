@@ -52,3 +52,7 @@ E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\MySe
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.dll
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\MySelf.AgileFramework.WebCore.pdb
 E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Works\learning\MyLearn2025\MySelf.Net.Demo\NetLearnDemo\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

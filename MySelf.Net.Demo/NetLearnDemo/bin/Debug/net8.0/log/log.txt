@@ -448,3 +448,11 @@ File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, 
    at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
    at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
    --- End of inner exception stack trace ---
+2025-02-18 20:52:30,820 [1] FATAL Microsoft.AspNetCore.Hosting.Diagnostics - Hosting startup assembly exception
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. 系统找不到指定的文件。
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext, RuntimeAssembly requestingAssembly, Boolean throwOnFileNotFound)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---

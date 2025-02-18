@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MySelf.AgileFramework.WebCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b6a8d60def0b2d940e59a3d24c11f23e3331cd4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8d6f5999f11f328a104ceaddb00ce7b263225a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MySelf.AgileFramework.WebCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MySelf.AgileFramework.WebCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

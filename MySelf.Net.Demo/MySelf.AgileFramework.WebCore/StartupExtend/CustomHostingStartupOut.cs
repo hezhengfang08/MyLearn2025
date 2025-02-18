@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: HostingStartup(typeof(CustomHostingStartupOut))]
+//[assembly: HostingStartup(typeof(CustomHostingStartupOut))]
 namespace MySelf.AgileFramework.WebCore.StartupExtend
 {
     public class CustomHostingStartupOut : IHostingStartup

@@ -9,8 +9,6 @@ using MySelf.Net.Demo.MyService;
 using MySelf.Net.Demo.NetLearnDemo.Utility;
 using MySelf.AgileFramework.WebCore.ConfigurationExtend;
 using MySelf.AgileFramework.WebCore.StartupExtend;
-using MySelf.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
-using MySelf.AgileFramework.WebCore.MiddlewareExtend;
 var builder = WebApplication.CreateBuilder(args);
 
 #endregion
@@ -79,8 +77,8 @@ builder.WebHost.ConfigureKestrel(options =>
 
 #endregion
 #region SecondMiddleWare注册
-builder.Services.AddSingleton<SecondMiddleware>();
-builder.Services.AddSingleton<SecondNewMiddleware>();
+//builder.Services.AddSingleton<SecondMiddleware>();
+//builder.Services.AddSingleton<SecondNewMiddleware>();
 
 
 //builder.Services.Replace(ServiceDescriptor.Singleton<IMiddlewareFactory, SecondNewMiddlewareFactory>());
@@ -89,10 +87,10 @@ builder.Services.AddSingleton<SecondNewMiddleware>();
 #region 标准的middleware IOC注册
 //builder.Services.AddBrowserFilter();//不允许edge
 
-builder.Services.AddBrowserFilter(options =>
-{
-    options.EnableEdge = true;
-});
+//builder.Services.AddBrowserFilter(options =>
+//{
+//    options.EnableEdge = true;
+//});
 #endregion
 #region IOC注册
 #region 开发者注册
@@ -127,7 +125,7 @@ var app = builder.Build();
 #endregion
 
 #region 标准Middleware
-app.UseBrowserFilter();//请求会走BrowserFilterMiddleware
+//app.UseBrowserFilter();//请求会走BrowserFilterMiddleware
 #endregion
 //#region    框架默认中间件
 

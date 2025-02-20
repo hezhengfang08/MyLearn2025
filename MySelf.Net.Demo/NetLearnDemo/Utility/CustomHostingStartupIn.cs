@@ -2,7 +2,7 @@
 using MySelf.Net.Demo.MyService;
 using MySelf.Net.Demo.NetLearnDemo.Utility;
 
-[assembly:HostingStartup(typeof(CustomHostingStartupIn))]
+//[assembly:HostingStartup(typeof(CustomHostingStartupIn))]
 namespace MySelf.Net.Demo.NetLearnDemo.Utility
 {
     public class CustomHostingStartupIn : IHostingStartup

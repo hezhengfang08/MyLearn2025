@@ -1,0 +1,56 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+**/[Dd]ebug/
+**/[Rr]elease/
+**/x64/
+**/x86/
+**/bin/
+**/obj/
+
+# Visual Studio cache files
+.vs/
+.vscode/
+
+# NuGet packages
+packages/
+
+# Node modules
+node_modules/
+
+# MSBuild cache files
+**/*.cache
+
+# Temporary ASP.NET Core files
+**/temp
+
+# Build log
+*.log
+
+# Docker environment variables
+.env
+
+# Database migrations history
+**/Migrations/
+
+# IDE specific files
+_ReSharper*/
+*.resharper/
+*.user*
+*.vspscc
+*.vssscc
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ASP.NET Core default setup: bower directory is configured as wwwroot/lib/
+**/wwwroot/lib/
+
+# Publish output
+**/[Pp]ublish/

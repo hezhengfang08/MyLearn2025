@@ -9,7 +9,8 @@ using MySelf.Net.Demo.MyService;
 using MySelf.Net.Demo.NetLearnDemo.Utility;
 using MySelf.AgileFramework.WebCore.ConfigurationExtend;
 using MySelf.AgileFramework.WebCore.StartupExtend;
-
+using MySelf.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
+using MySelf.AgileFramework.WebCore.MiddlewareExtend;
 var builder = WebApplication.CreateBuilder(args);
 
 #endregion
@@ -77,7 +78,22 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 
 #endregion
+#region SecondMiddleWare注册
+builder.Services.AddSingleton<SecondMiddleware>();
+builder.Services.AddSingleton<SecondNewMiddleware>();
 
+
+//builder.Services.Replace(ServiceDescriptor.Singleton<IMiddlewareFactory, SecondNewMiddlewareFactory>());
+#endregion
+
+#region 标准的middleware IOC注册
+//builder.Services.AddBrowserFilter();//不允许edge
+
+builder.Services.AddBrowserFilter(options =>
+{
+    options.EnableEdge = true;
+});
+#endregion
 #region IOC注册
 #region 开发者注册
 builder.Services.AddTransient<ITestServiceA, TestServiceA>();
@@ -102,22 +118,37 @@ builder.Services.AddControllersWithViews();
 #region Build
 var app = builder.Build();
 #endregion
-#region Use中间件
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-}
-app.UseStaticFiles();
 
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+#region UseMiddleware式--用类
+//app.UseMiddleware<FirstMiddleware>();
+//app.UseMiddleware<SecondMiddleware>();
+//app.UseMiddleware<SecondNewMiddleware>();
+//app.UseMiddleware<ThirdMiddleware>("Eleven Zhaoxi.NET7.DemoProject");
 #endregion
+
+#region 标准Middleware
+app.UseBrowserFilter();//请求会走BrowserFilterMiddleware
+#endregion
+//#region    框架默认中间件
+
+
+
+
+//// Configure the HTTP request pipeline.
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseExceptionHandler("/Home/Error");
+//}
+//app.UseStaticFiles();
+
+//app.UseRouting();
+
+//app.UseAuthorization();
+
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
+//#endregion
 #region Run
 app.Run();
 #endregion

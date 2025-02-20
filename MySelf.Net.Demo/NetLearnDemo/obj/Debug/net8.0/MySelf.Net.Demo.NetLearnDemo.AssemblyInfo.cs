@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MySelf.Net.Demo.NetLearnDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8d6f5999f11f328a104ceaddb00ce7b263225a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa4a3d339cc3ce4a9e954123011dc2925bf73b11")]
 [assembly: System.Reflection.AssemblyProductAttribute("MySelf.Net.Demo.NetLearnDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MySelf.Net.Demo.NetLearnDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

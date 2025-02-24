@@ -9,6 +9,10 @@ using MySelf.Net.Demo.MyService;
 using MySelf.Net.Demo.NetLearnDemo.Utility;
 using MySelf.AgileFramework.WebCore.ConfigurationExtend;
 using MySelf.AgileFramework.WebCore.StartupExtend;
+using MySelf.AgileFramework.WebCore;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Net.Http.Headers;
 var builder = WebApplication.CreateBuilder(args);
 
 #endregion
@@ -132,20 +136,86 @@ var app = builder.Build();
 
 
 
-//// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();//HTTP 严格传输安全
+}
+else
+{
+    app.UseDeveloperExceptionPage();//DeveloperExceptionPageMiddlewareImpl
+
+    #region  扩展指定错误处理动作
+    app.UseStatusCodePagesWithReExecute("/Error/{0}");//只要不是200 都能进来
+
+    app.UseExceptionHandler(errorApp =>
+    {
+        errorApp.Run(async context =>
+        {
+            //还能判断是否Ajax请求，可以返回Json格式
+            int errorCode = context.Response.StatusCode;
+
+            context.Response.StatusCode = 200;
+            context.Response.ContentType = "text/html";
+
+            await context.Response.WriteAsync("<html lang=\"en\"><body>\r\n");
+            await context.Response.WriteAsync($"ERROR! {errorCode}<br><br>\r\n");
+
+            var exceptionHandlerPathFeature =
+                context.Features.Get<IExceptionHandlerPathFeature>();
+
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            Console.WriteLine($"{exceptionHandlerPathFeature?.Error.Message}");
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            await context.Response.WriteAsync($"{exceptionHandlerPathFeature?.Error.Message}<br><br>\r\n");
+
+            // Use exceptionHandlerPathFeature to process the exception (for example, 
+            // logging), but do NOT expose sensitive error information directly to 
+            // the client.
+
+            if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+            {
+                await context.Response.WriteAsync("File error thrown!<br><br>\r\n");
+            }
+
+            await context.Response.WriteAsync("<a href=\"/\">Home</a><br>\r\n");
+            await context.Response.WriteAsync("</body></html>\r\n");
+            await context.Response.WriteAsync(new string(' ', 512)); // IE padding
+        });
+    });
+    #endregion
+}
+
+//防盗链
+app.UseRefuseStealing();
+
+app.UseStaticFiles();
+//app.UseStaticFiles(new StaticFileOptions()
 //{
-//    app.UseExceptionHandler("/Home/Error");
-//}
-//app.UseStaticFiles();
+//    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot")),//指定路径---还有provider
+//    ServeUnknownFileTypes = false,//
+//    OnPrepareResponse = context =>
+//    {
+//        context.Context.Response.Headers[HeaderNames.CacheControl] = "no-store";//"no-cache";//
+//    }//响应请求之前，才可以修改header
+//});
 
-//app.UseRouting();
 
-//app.UseAuthorization();
+//app.UseDirectoryBrowser(new DirectoryBrowserOptions
+//{
+//    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+//    //FileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory()),
+//    //RequestPath = "/CustomImages"
+//});//其实是个后门
+app.UseRouting();
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 //#endregion
 #region Run
 app.Run();

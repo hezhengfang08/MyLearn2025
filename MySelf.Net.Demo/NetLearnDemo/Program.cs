@@ -109,6 +109,9 @@ builder.Services.Replace(ServiceDescriptor.Transient<ITestServiceE, TestServiceE
 #endregion
 
 #endregion
+#region HttpContext获取
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();//如果需要获取HttpContext
+#endregion
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

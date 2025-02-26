@@ -84,7 +84,7 @@ namespace MySelf.Net.Demo.NetLearnDemo.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [Route("/Gender/{id:GenderConstraint}.html")]
+        //[Route("/Gender/{id:GenderConstraint}.html")]
         public IActionResult GenderInfo(int id)
         {
             this._logger.LogWarning("This is RouteController-GenderInfo LogWarning");

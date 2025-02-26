@@ -13,6 +13,10 @@ using MySelf.AgileFramework.WebCore;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Net.Http.Headers;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using MySelf.AgileFramework.WebCore.AuthenticationExtend;
 var builder = WebApplication.CreateBuilder(args);
 
 #endregion
@@ -111,6 +115,65 @@ builder.Services.Replace(ServiceDescriptor.Transient<ITestServiceE, TestServiceE
 #endregion
 #region HttpContext获取
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();//如果需要获取HttpContext
+#endregion
+
+
+#region 鉴权授权
+
+#region 鉴权
+//builder.Services.AddAuthentication();//鉴权相关的IOC注册--还不够，因为凭证有很多方式--Cookie--JWT
+#region UrlToken
+builder.Services.AddAuthentication(options =>
+{
+    options.AddScheme<UrlTokenAuthenticationHandler>(UrlTokenAuthenticationDefaults.AuthenticationScheme, "UrlTokenScheme-Demo");
+    //其实会保存成key-value     也就是name不能重复  value就是UrlTokenAuthenticationHandler
+    options.DefaultAuthenticateScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultForbidScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignOutScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+});
+#endregion
+
+#region Cookie
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+//     {
+//         //options.ExpireTimeSpan//过期时间
+//         options.LoginPath = "/Home/Index";
+//         options.AccessDeniedPath = "/Home/Privacy";//有登陆，鉴权成功--没有授权
+//     });//使用Cookie的方式
+//;//告诉框架，如何鉴权
+#endregion
+
+#region CustomAdd
+//builder.Services.CustomAddAuthenticationCore();//替换4个核心对象的注入
+
+builder.Services.Replace(ServiceDescriptor.Scoped<IClaimsTransformation, CustomClaimsTransformation>());
+#endregion
+
+#endregion
+
+#region 授权
+//builder.Services.AddAuthorization();//授权相关的IOC注册--在AddMVC已经有了
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policyBuilder =>
+    {
+        policyBuilder.RequireRole("Admin");
+    });//等价于  Roles=Admin
+    options.AddPolicy("MutiPolicy", policyBuilder =>
+    {
+        policyBuilder.RequireRole("Admin")//都属于框架封装好的
+        .RequireUserName("Eleven")//Role  UserName都是最常用的
+        .RequireClaim(ClaimTypes.Country)//只要求有Country属性
+        ;
+    });
+});
+
+#endregion
+
 #endregion
 
 // Add services to the container.
@@ -213,6 +276,8 @@ app.UseStaticFiles();
 //    //RequestPath = "/CustomImages"
 //});//其实是个后门
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

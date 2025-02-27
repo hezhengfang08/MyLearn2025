@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.Net.Demo.MyService",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.AgileFramework.WebCore", "MySelf.AgileFramework.WebCore\MySelf.AgileFramework.WebCore.csproj", "{CF7D243E-29C4-4B8F-A31B-014A9906E1DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.NET8.WebAPIProject", "MySelf.NET8.WebAPIProject\MySelf.NET8.WebAPIProject.csproj", "{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CF7D243E-29C4-4B8F-A31B-014A9906E1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7D243E-29C4-4B8F-A31B-014A9906E1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7D243E-29C4-4B8F-A31B-014A9906E1DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

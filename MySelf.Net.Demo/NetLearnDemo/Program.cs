@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MySelf.AgileFramework.WebCore.AuthenticationExtend;
+using MySelf.Net.Demo.NetLearnDemo.Utility.GraphEndpoint;
 var builder = WebApplication.CreateBuilder(args);
 
 #endregion
@@ -200,7 +201,11 @@ var app = builder.Build();
 //#region    框架默认中间件
 
 
-
+#region graph
+//http://localhost:5726/graph
+//https://graphviz.christine.website/
+app.Map("/graph", branch => branch.UseMiddleware<GraphEndpointMiddleware>());
+#endregion
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

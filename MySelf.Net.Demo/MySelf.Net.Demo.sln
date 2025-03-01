@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.AgileFramework.WebCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.NET8.WebAPIProject", "MySelf.NET8.WebAPIProject\MySelf.NET8.WebAPIProject.csproj", "{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.NET8.AuthenticationCenter", "MySelf.NET8.AuthenticationCenter\MySelf.NET8.AuthenticationCenter.csproj", "{A8A327DF-8912-410A-81A0-A6156D0D237B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3A0083-2801-42B8-BDF3-504BF4C81C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A327DF-8912-410A-81A0-A6156D0D237B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A327DF-8912-410A-81A0-A6156D0D237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A327DF-8912-410A-81A0-A6156D0D237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A327DF-8912-410A-81A0-A6156D0D237B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

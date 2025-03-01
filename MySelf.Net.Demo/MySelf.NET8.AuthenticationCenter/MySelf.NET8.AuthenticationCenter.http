@@ -1,0 +1,6 @@
+@MySelf.NET8.AuthenticationCenter_HostAddress = http://localhost:5008
+
+GET {{MySelf.NET8.AuthenticationCenter_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -9,8 +9,32 @@ namespace MySelf.NET8.AuthenticationCenter
 {
     public class Program
     {
+        public static bool IsHaveTwo(string input1, string input2)
+        {
+            int length = input1.Length;
+            if (length >= 2)
+                for (int i = 0; i < length - 2; i++)
+                {
+                    string substr = input1.Substring(i, 2);
+                    if (input2.IndexOf(substr) != -1)
+                        return true;
+                }
+
+            return false;
+         }
         public static void Main(string[] args)
         {
+           var test1 = IsHaveTwo("abcd", "dcca");
+            var test2 = IsHaveTwo("abcd", "dbca");
+            var test3 = IsHaveTwo("abccde", "ccbdae");
+            var test4 = IsHaveTwo("abcd", "dba");
+            var test5 = IsHaveTwo("dba", "abcd");
+            Console.WriteLine(test1);
+            Console.WriteLine(test2);
+            Console.WriteLine(test3);
+            Console.WriteLine(test4);
+            Console.WriteLine(test5);
+        
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

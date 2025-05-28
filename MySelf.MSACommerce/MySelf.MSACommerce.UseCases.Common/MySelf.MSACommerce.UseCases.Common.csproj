@@ -10,4 +10,8 @@
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
+	</ItemGroup>
 </Project>

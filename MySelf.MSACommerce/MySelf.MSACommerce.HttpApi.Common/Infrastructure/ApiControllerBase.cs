@@ -1,20 +1,19 @@
-﻿using MySelf.MSACommerce.HttpApi.Common.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿
+
 using MediatR;
+
+using Microsoft.AspNetCore.Mvc;
 using MySelf.MSACommerce.SharedKernel.Result;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace MySelf.MSACommerce.HttpApi.Common.Infrastructure
 {
     public abstract class ApiControllerBase : ControllerBase
     {
-        protected ISender Sender => HttpContent.RequestService.GetRequestService<ISender>();
+        protected ISender Sender => HttpContext.RequestServices.GetRequiredService<ISender>();
 
+        [NonAction]
         protected IActionResult ReturnResult(IResult result)
         {
             switch (result.Status)

@@ -12,7 +12,7 @@ namespace MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.Interceptors
 {
     public class AuditEntityInterceptor(IUser currentUser) :SaveChangesInterceptor
     {
-        public override  InterceptionResult<int> SavingChanges(DbContextErrorEventData eventData, InterceptionResult<int> result )
+        public override  InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result )
         {
             UpdateEntities(eventData.Context);
             return base.SavingChanges(eventData, result );

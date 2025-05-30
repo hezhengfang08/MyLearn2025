@@ -109,5 +109,5 @@ namespace MySelf.MSACommerce.SharedKernel.Result
         }
     }
 }
-}
+
 

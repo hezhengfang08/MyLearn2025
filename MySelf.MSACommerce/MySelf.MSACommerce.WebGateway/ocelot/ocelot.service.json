@@ -1,0 +1,28 @@
+{
+  "Routes": [
+    {
+      "ServiceName": "MySelf.MSACommerce.UserService.HttpApi",
+      "DownstreamPathTemplate": "/api/user/{path}",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamPathTemplate": "/api/user/{path}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "ServiceName": "MySelf.MSACommerce.UserService.HttpApi",
+      "DownstreamPathTemplate": "/api/user/test",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamPathTemplate": "/api/user/test",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKeys": [ "Bearer" ],
+        "AllowedScopes": []
+      }
+    }
+  ]
+}

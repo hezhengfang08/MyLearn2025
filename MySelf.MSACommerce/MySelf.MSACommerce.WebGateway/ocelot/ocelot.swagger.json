@@ -1,0 +1,25 @@
+{
+  "Routes": [
+    {
+      "ServiceName": "MySelf.MSACommerce.AuthServer",
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamPathTemplate": "/auth/swagger.json",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "Key": "UserServiceSwagger",
+      "ServiceName": "MySelf.MSACommerce.UserService.HttpApi",
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamPathTemplate": "/user/swagger.json",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}

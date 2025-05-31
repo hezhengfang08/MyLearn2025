@@ -1,0 +1,6 @@
+@MySelf.MSACommerce.WebGateway_HostAddress = http://localhost:5119
+
+GET {{MySelf.MSACommerce.WebGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,9 +1,5 @@
 
-using MySelf.MSACommerce.Infrastructure.EntityFrameworkCore;
-using MySelf.MSACommerce.UserService.Infrastructure;
-using MySelf.MSACommerce.UserService.UseCases;
-
-namespace MySelf.MSACommerce.UserService.HttpApi
+namespace MySelf.MSACommerce.AuthServer
 {
     public class Program
     {
@@ -12,10 +8,7 @@ namespace MySelf.MSACommerce.UserService.HttpApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddInfrastructure(builder.Configuration);
-            builder.Services.AddUseCase();
-            builder.Services.AddHttpApi();
-
+            builder.Services.AddAuthServer(builder.Configuration);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

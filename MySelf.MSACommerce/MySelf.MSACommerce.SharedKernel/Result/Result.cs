@@ -53,7 +53,7 @@ namespace MySelf.MSACommerce.SharedKernel.Result
                 Errors = result.Errors,
             };
         }
-        public static Result Success(IResult result)
+        public static Result Success()
         {
             return new Result(ResultStatus.Ok);
         }

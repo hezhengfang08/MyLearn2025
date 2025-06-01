@@ -7,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MySelf.MSACommerce.CommonServiceClient
 {
     public static class ServiceClientExtension
     {
-        public static IServiceCollection AddServiceClient<TServiceClient>(this IServiceCollection services,
-            Action<ServiceClientOption> configServiceClient,
-            Action<HttpClient> configHttpClient)
-            where TServiceClient:class, ISeviceClient
+        public static void AddServiceClient<TServiceApi>(this IServiceCollection services,
+        Action<ServiceClientOption> configureServiceClient,
+        Action<HttpClient> configureHttpClient)
+        where TServiceApi : class
         {
             var serviceClientOption = new ServiceClientOption();
-            configServiceClient.Invoke(serviceClientOption);
+            configureServiceClient.Invoke(serviceClientOption);
+
             services.AddConsulDiscovery();
-            services.AddLoadBalancer<TServiceClient>(serviceClientOption.LoadBalancingStrategy);
-            services.AddHttpClient<TServiceClient>(configHttpClient);
-            services.AddScoped<TServiceClient>();
-            return services;
+
+            services.AddLoadBalancer<TServiceApi>(serviceClientOption);
+
+            services.AddHttpClient<TServiceApi>(configureHttpClient);
+
+            services.AddScoped<IServiceClient<TServiceApi>, ServiceClient<TServiceApi>>();
         }
     }
 }

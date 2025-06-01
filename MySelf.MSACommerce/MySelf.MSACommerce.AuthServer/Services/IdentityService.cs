@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using MySelf.MSACommerce.AuthServer.Apis;
 using MySelf.MSACommerce.SharedKernel.Result;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace MySelf.MSACommerce.AuthServer.Services
 {
-    public class IdentityService(IUserService userService, IOptions<JwtSettings> jwtSettings) : IIdentityService
+    public class IdentityService(IUserServiceApi userService, IOptions<JwtSettings> jwtSettings) : IIdentityService
     {
         public async Task<Result<string>> GetAccessTokenAsync(string userName, string password)
         {

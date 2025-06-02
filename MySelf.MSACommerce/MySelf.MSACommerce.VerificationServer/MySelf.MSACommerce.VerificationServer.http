@@ -1,0 +1,6 @@
+@MySelf.MSACommerce.VerificationServer_HostAddress = http://localhost:5102
+
+GET {{MySelf.MSACommerce.VerificationServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

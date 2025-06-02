@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.CommonServiceClient\MySelf.MSACommerce.CommonServiceClient.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.HttpApi.Common\MySelf.MSACommerce.HttpApi.Common.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.UserService.Infrastructure\MySelf.MSACommerce.UserService.Infrastructure.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.UserService.UseCases\MySelf.MSACommerce.UserService.UseCases.csproj" />

@@ -10,7 +10,7 @@ namespace MySelf.MSACommerce.Infrastructure.EntityFrameworkCore
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructureCommon(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructureEfCore(this IServiceCollection services)
         {
             services.AddScoped<AuditEntityInterceptor>();
 

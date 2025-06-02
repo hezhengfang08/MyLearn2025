@@ -6,6 +6,7 @@ using MySelf.MSACommerce.UserService.Infrastructure.Datas;
 using System.Data.Common;
 using System.Runtime.CompilerServices;
 using MySelf.MSACommerce.Infrastructure.EntityFrameworkCore;
+using MySelf.MSACommerce.Infrastructure.Common;
 
 namespace MySelf.MSACommerce.UserService.Infrastructure
 {
@@ -13,7 +14,7 @@ namespace MySelf.MSACommerce.UserService.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,IConfiguration configuration)
         {
-            services.AddInfrastructureCommon();
+            services.AddInfrastructureCommon(configuration);
             ConfigureEfCore(services,configuration);
             return services;
         }

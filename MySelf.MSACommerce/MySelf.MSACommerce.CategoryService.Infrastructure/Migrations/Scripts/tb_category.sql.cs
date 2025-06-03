@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySelf.MSACommerce.CategoryService.UseCases
+namespace MySelf.MSACommerce.CategoryService.Infrastructure.Migrations.Scripts
 {
-    public record CategoryDto(long Id, string Name);
+    internal class Class1
+    {
+    }
 }

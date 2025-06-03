@@ -13,6 +13,9 @@ namespace MySelf.MSACommerce.CategoryService.Infrastructure.Data
     {
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<CategoryBrands> categoryBrands => Set<CategoryBrands>();
+        public DbSet<SpecKey> SpecKeys => Set<SpecKey>();
+        public DbSet<ParameterGroup> ParameterGroups => Set<ParameterGroup>();
+        public DbSet<ParameterKey> ParameterKeys => Set<ParameterKey>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

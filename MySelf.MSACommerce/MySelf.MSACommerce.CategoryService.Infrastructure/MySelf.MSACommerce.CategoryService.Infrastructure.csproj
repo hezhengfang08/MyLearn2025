@@ -6,10 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="Migrations\Scripts\tb_category.sql" />
-  </ItemGroup>
-
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.10" />
       <PackageReference Include="ZiggyCreatures.FusionCache.Serialization.SystemTextJson" Version="1.4.1" />
@@ -18,6 +14,9 @@
     <ProjectReference Include="..\MySelf.MSACommerce.CategoryService.Core\MySelf.MSACommerce.CategoryService.Core.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

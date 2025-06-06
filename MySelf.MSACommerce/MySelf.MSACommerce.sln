@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.MSACommerce.ProductS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.MSACommerce.ProductService.UseCases", "MySelf.MSACommerce.ProductService.UseCases\MySelf.MSACommerce.ProductService.UseCases.csproj", "{ACFAEDBD-92B2-4999-822D-CFEEDEC731D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelf.MSACommerce.ProductDetailPage", "MySelf.MSACommerce.ProductDetailPage\MySelf.MSACommerce.ProductDetailPage.csproj", "{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +205,10 @@ Global
 		{ACFAEDBD-92B2-4999-822D-CFEEDEC731D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACFAEDBD-92B2-4999-822D-CFEEDEC731D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACFAEDBD-92B2-4999-822D-CFEEDEC731D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +250,7 @@ Global
 		{277B828D-5602-4E84-955A-FA1F64D8AABF} = {77ED7797-F093-4F03-835E-E09CCB8B9B5E}
 		{90E24F21-1777-4FDF-85CD-5DF935CC25D3} = {77ED7797-F093-4F03-835E-E09CCB8B9B5E}
 		{ACFAEDBD-92B2-4999-822D-CFEEDEC731D6} = {77ED7797-F093-4F03-835E-E09CCB8B9B5E}
+		{28FA5AC2-2CB0-40EE-A1D2-052F785EA5C9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBAE141-CB67-41DA-B19D-A8B9A61A5FA9}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-MySelf.MSACommerce.ElasticSyncWorker-611ac1ee-a827-4d22-9bcf-cfb9e244159e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.15.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.CommonServiceClient\MySelf.MSACommerce.CommonServiceClient.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedEvent\MySelf.MSACommerce.SharedEvent.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
+  </ItemGroup>
+</Project>

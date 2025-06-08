@@ -10,7 +10,7 @@ namespace MySelf.MSACommerce.SharedKernel.Paging
     public class PagedList<T> : List<T>
     {
         public PagedMetaData MetaData { get; set; }
-        public PagedList(IEnumerable<T> items,int count, Pagination pagination)
+        public PagedList(IEnumerable<T> items, long count, Pagination pagination)
         {
             MetaData = new PagedMetaData
             {

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySefl.MSACommerce.SearchService.Infrastructure\MySefl.MSACommerce.SearchService.Infrastructure.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.CommonServiceClient\MySelf.MSACommerce.CommonServiceClient.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SearchService.Core\MySelf.MSACommerce.SearchService.Core.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.UseCases.Common\MySelf.MSACommerce.UseCases.Common.csproj" />
+  </ItemGroup>
+
+</Project>

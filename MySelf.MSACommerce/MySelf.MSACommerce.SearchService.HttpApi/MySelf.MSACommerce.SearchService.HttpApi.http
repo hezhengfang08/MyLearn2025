@@ -1,0 +1,6 @@
+@MySelf.MSACommerce.SearchService.HttpApi_HostAddress = http://localhost:5179
+
+GET {{MySelf.MSACommerce.SearchService.HttpApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

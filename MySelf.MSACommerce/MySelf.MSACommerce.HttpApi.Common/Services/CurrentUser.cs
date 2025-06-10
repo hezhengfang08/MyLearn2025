@@ -13,13 +13,11 @@ namespace MySelf.MSACommerce.HttpApi.Common.Services
     {
         private readonly ClaimsPrincipal? _user = httpContextAccessor.HttpContext?.User;
 
-        public int? Id
+        public long Id
         {
             get
             {
                 var id = _user?.FindFirstValue(ClaimTypes.NameIdentifier);
-
-                if (id is null) return null;
 
                 return Convert.ToInt32(id);
             }

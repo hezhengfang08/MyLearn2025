@@ -41,7 +41,7 @@ namespace MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.Interceptors
             {
                 if (entry.State is not (EntityState.Added or EntityState.Modified)) continue;
 
-                if (currentUser.Id is null) continue;
+                if (currentUser.Id ==0 ) continue; //what for
 
                 if (entry.State == EntityState.Added)
                     entry.Entity.CreatedBy = currentUser.Id;

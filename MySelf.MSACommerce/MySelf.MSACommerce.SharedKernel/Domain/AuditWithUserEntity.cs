@@ -8,7 +8,7 @@ namespace MySelf.MSACommerce.SharedKernel.Domain
 {
     public abstract class AuditWithUserEntity: BaseAuditEntity
     {
-        public int? CreatedBy { get; set; }
-        public int? LastModifiedBy { get; set; }
+        public long? CreatedBy { get; set; }
+        public long? LastModifiedBy { get; set; }
     }
 }

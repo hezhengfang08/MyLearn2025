@@ -8,7 +8,7 @@ namespace MySelf.MSACommerce.UseCases.Common.Interfaces
 {
     public interface IUser
     {
-        int? Id { get; }
+        long Id { get; }
         string? UserName { get; }
     }
 }

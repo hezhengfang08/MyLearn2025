@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.CartService.Core\MySelf.MSACommerce.CartService.Core.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Redis\MySelf.MSACommerce.Infrastructure.Redis.csproj" />
+  </ItemGroup>
+
+</Project>

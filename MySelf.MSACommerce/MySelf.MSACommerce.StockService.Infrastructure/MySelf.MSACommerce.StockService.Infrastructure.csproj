@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.StockService.Core\MySelf.MSACommerce.StockService.Core.csproj" />
+  </ItemGroup>
+
+</Project>

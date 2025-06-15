@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="EntityFramework.zh-Hans" Version="6.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.CommonServiceClient\MySelf.MSACommerce.CommonServiceClient.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.OrderService.Core\MySelf.MSACommerce.OrderService.Core.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.OrderService.Infrastructure\MySelf.MSACommerce.OrderService.Infrastructure.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedEvent\MySelf.MSACommerce.SharedEvent.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.UseCases.Common\MySelf.MSACommerce.UseCases.Common.csproj" />
+  </ItemGroup>
+
+</Project>

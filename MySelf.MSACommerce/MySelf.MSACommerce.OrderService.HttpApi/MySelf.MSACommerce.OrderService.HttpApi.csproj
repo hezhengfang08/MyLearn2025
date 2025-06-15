@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    </ItemGroup>  
+
+  
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.Authentication.JwtBearer\MySelf.MSACommerce.Authentication.JwtBearer.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.CommonServiceClient\MySelf.MSACommerce.CommonServiceClient.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.HttpApi.Common\MySelf.MSACommerce.HttpApi.Common.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.OrderService.Infrastructure\MySelf.MSACommerce.OrderService.Infrastructure.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.OrderService.UseCases\MySelf.MSACommerce.OrderService.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>

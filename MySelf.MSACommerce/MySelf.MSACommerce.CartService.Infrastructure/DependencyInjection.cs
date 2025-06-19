@@ -14,7 +14,20 @@ namespace MySelf.MSACommerce.CartService.Infrastructure
             services.AddInfrastructureCommon(configuration);
             services.AddInfrastructureRedis(configuration);
             services.AddScoped<ICartRepository, RedisCartRepository>();
+            ConfigureCap(services, configuration);
             return services;
+        }
+        private static void ConfigureCap(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddCap(x =>
+            {
+                x.UseInMemoryStorage();
+                x.UseRabbitMQ(options =>
+                {
+                    configuration.GetSection("RabbitMQ").Bind(options);
+                });
+                x.UseDashboard();
+            });
         }
     }
 }

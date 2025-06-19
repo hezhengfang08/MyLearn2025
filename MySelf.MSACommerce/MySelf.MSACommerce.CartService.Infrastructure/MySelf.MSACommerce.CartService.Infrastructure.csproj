@@ -11,5 +11,10 @@
     <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Redis\MySelf.MSACommerce.Infrastructure.Redis.csproj" />
   </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="DotNetCore.CAP" Version="8.3.1" />
+        <PackageReference Include="DotNetCore.CAP.Dashboard" Version="8.3.1" />
+        <PackageReference Include="DotNetCore.CAP.InMemoryStorage" Version="8.3.1" />
+        <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="8.3.1" />
+    </ItemGroup>
 </Project>

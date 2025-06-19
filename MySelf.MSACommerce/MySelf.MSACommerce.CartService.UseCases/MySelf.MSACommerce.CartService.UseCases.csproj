@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MySelf.MSACommerce.CartService.Core\MySelf.MSACommerce.CartService.Core.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.CartService.Infrastructure\MySelf.MSACommerce.CartService.Infrastructure.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SharedEvent\MySelf.MSACommerce.SharedEvent.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.UseCases.Common\MySelf.MSACommerce.UseCases.Common.csproj" />
   </ItemGroup>

@@ -10,6 +10,7 @@ namespace MySelf.MSACommerce.SharedEvent.Orders
 
     public record OrderCreatedEvent
     {
+        public long UserId { get; set; }
         public long OrderId { get; set; }
         public List<OrderSku> Skus { get; set; }
     }

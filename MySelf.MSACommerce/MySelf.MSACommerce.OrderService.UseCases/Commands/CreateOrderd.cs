@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace MySelf.MSACommerce.OrderService.UseCases.Commands
 {
-    public record CreateOrderCommand(OrderForCreateDto Order) : ICommand<Result>;
+    public record CreateOrderCommand(OrderForCreateDto Order) : ICommand<Result<long>>;
 
     public class CreateOrderCommandValidator : AbstractValidator<OrderForCreateDto>
     {
@@ -27,9 +27,9 @@ namespace MySelf.MSACommerce.OrderService.UseCases.Commands
 
     public class CreateOrderCommandHandler(OrderDbContext dbContext, IIdGenerator<long> idGen, IUser user,
         IServiceClient<IProductServiceApi> productClient,
-        ICapPublisher capPublisher) : ICommandHandler<CreateOrderCommand, Result>
+        ICapPublisher capPublisher) : ICommandHandler<CreateOrderCommand, Result<long>>
     {
-        public async Task<Result> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+        public async Task<Result<long>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
             var order = new Order(idGen.CreateId())
             {
@@ -79,11 +79,11 @@ namespace MySelf.MSACommerce.OrderService.UseCases.Commands
                 };
 
                 await capPublisher.PublishAsync(nameof(OrderCreatedEvent), orderCreatedEvent, nameof(OrderCreatedEventResult), cancellationToken);
-
+                await capPublisher.PublishDelayAsync(TimeSpan.FromSeconds(600), nameof(OrderTimeoutEvent), new OrderTimeoutEvent(order.Id), cancellationToken: cancellationToken);
                 await trans.CommitAsync(cancellationToken);
             }
 
-            return Result.Success();
+            return Result.Success(order.Id);
         }
     }
 

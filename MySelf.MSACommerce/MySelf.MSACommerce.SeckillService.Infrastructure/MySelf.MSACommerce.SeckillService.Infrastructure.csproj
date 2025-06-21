@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CaptchaGen.NetCore" Version="1.1.2" />
+    <PackageReference Include="IdGen.DependencyInjection" Version="3.0.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Redis\MySelf.MSACommerce.Infrastructure.Redis.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.SeckillService.Core\MySelf.MSACommerce.SeckillService.Core.csproj" />
+  </ItemGroup>
+</Project>

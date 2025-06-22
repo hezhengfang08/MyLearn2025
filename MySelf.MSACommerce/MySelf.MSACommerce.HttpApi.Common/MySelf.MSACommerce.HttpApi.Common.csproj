@@ -11,8 +11,16 @@
 
 
 	<ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.Configuration\MySelf.MSACommerce.Configuration.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Consul\MySelf.MSACommerce.Consul.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.SharedKernel\MySelf.MSACommerce.SharedKernel.csproj" />
     <ProjectReference Include="..\MySelf.MSACommerce.UseCases.Common\MySelf.MSACommerce.UseCases.Common.csproj" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.2.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    <PackageReference Include="SkyAPM.Agent.AspNetCore" Version="2.2.0" />
+  </ItemGroup>
+  
 </Project>

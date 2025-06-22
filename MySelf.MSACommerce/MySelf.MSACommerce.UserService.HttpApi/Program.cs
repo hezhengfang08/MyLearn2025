@@ -1,4 +1,5 @@
 
+using MySelf.MSACommerce.Configuration;
 using MySelf.MSACommerce.Infrastructure.EntityFrameworkCore;
 using MySelf.MSACommerce.UserService.Infrastructure;
 using MySelf.MSACommerce.UserService.UseCases;
@@ -12,6 +13,8 @@ namespace MySelf.MSACommerce.UserService.HttpApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Configuration.AddConfigCenter("user-service");
+
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddUseCase();
             builder.Services.AddHttpApi();

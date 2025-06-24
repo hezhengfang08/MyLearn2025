@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNetCore.CAP" Version="8.3.1" />
+    <PackageReference Include="DotNetCore.CAP.Dashboard" Version="8.3.1" />
+    <PackageReference Include="DotNetCore.CAP.MySql" Version="8.3.1" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="8.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.10" />
+    <PackageReference Include="ZiggyCreatures.FusionCache.Serialization.SystemTextJson" Version="1.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.Common\MySelf.MSACommerce.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore\MySelf.MSACommerce.Infrastructure.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MySelf.MSACommerce.PaymentService.Core\MySelf.MSACommerce.PaymentService.Core.csproj" />
+  </ItemGroup>
+</Project>
